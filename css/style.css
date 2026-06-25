@@ -6,12 +6,18 @@ body {
     background: #332113 url(../images/bg.png) repeat-x;
     color: #ecbd9d;
     font-family: "Noto Serif TC", serif;
+    box-sizing: border-box;
     /* background-color: #fbf9cc;
     background-image: url(../images/bg.png);
     background-repeat: repeat-x; */
     /* 背景中間偏移使用calc()函數，四值語法不允許center + 20px */
     /* background-position: calc(50% + 10vw) top;
     background-position: top 50px right 50px; */
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 /*連結顏色設定*/
@@ -75,35 +81,56 @@ h1 {
 }
 
 /*導覽樣式設定*/
+nav {
+    position: relative;
+}
 /* nav {
     position: sticky;
     top: 0px;
     background-color: #332113;
     width: 100%;
 } */
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+.nav-button {
+    display: none;
+    font-weight: bold;
+    color: #332113;
+    background-color: #b16e41;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 14px;
+    cursor: pointer;
+    margin: 0 auto 0.75rem;
+}
+.nav-button:hover {
+    background-color: #d48957;
+}
 .menu {
-    width: 85%;
+    width: auto;
     margin: 0 auto;
     list-style-type: none;
     padding: 10px 0;
-    /* display: flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3%; */
+    gap: 0.8rem;
 }
 .menu li {
-    /* flex-grow: 1;
-    max-width: 200px; */
-    display: inline-block;
-    width: 20%;
-    max-width: 200px;
-    margin: 0 10px;
+    flex: 1 1 160px;
+    max-width: 220px;
+    margin: 0;
 }
 .menu a {
     color: #332113;
     font-weight: bold;
     background-color: #b16e41;
-    padding: 10px 5px;
+    padding: 10px 8px;
     border-radius: 5px;
     display: block;
     transform: translate(0px, 0px);
@@ -305,4 +332,159 @@ table textarea:focus {
 }
 .btns input:hover {
     background-color: #d48957;
+}
+
+/* RWD 響應式調整 */
+@media (max-width: 900px) {
+    h1 {
+        width: auto;
+        max-width: 90%;
+        padding: 24px 18px;
+        font-size: 260%;
+    }
+    .content {
+        width: min(95%, 960px);
+        padding: 60px 5vw;
+    }
+    .menu li {
+        flex: 1 1 180px;
+        max-width: 240px;
+    }
+    .imgL,
+    .imgR {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+        width: 100%;
+        max-width: 560px;
+    }
+    .more,
+    .back {
+        text-align: center;
+    }
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+    }
+    dl dt,
+    dl dd {
+        width: auto;
+        margin: 0;
+    }
+    dl dt {
+        flex: 0 0 110px;
+    }
+    dl dd {
+        flex: 1 1 220px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 95%;
+    }
+    h1 {
+        font-size: 220%;
+        margin: 24px auto;
+        padding: 20px 16px;
+    }
+    .content {
+        width: min(98%, 960px);
+        padding: 40px 4vw;
+    }
+    .nav-button {
+        display: inline-flex;
+    }
+    .menu {
+        display: none;
+        width: 100%;
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+    .nav-toggle:checked+.nav-button+.menu {
+        display: flex;
+    }
+    .menu li {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+    .menu a {
+        padding: 12px 10px;
+    }
+    .imgL,
+    .imgR {
+        max-width: 100%;
+        margin: 0 auto 1rem;
+    }
+    section h3 {
+        font-size: 1.1rem;
+    }
+    .more,
+    .back {
+        text-align: left;
+        padding-top: 10px;
+    }
+    dl {
+        display: block;
+    }
+    dl dt,
+    dl dd {
+        width: 100%;
+    }
+    dl dt {
+        margin-top: 1rem;
+    }
+    table,
+    table th,
+    table td {
+        display: block;
+        width: 100%;
+    }
+    table {
+        border-collapse: separate;
+        border-spacing: 0 0.75rem;
+    }
+    table th {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #ecbd9d;
+        border: 1px solid #b16e41;
+        text-align: left;
+    }
+    table td {
+        display: block;
+        width: 100%;
+        border: 1px solid #b16e41;
+        border-top: none;
+        padding: 10px 0 1rem;
+        background-color: #fff;
+    }
+    table caption {
+        text-align: left;
+    }
+    table input[type="text"],
+    table input[type="email"],
+    table textarea,
+    table select {
+        width: 100%;
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+    .btns input {
+        width: 100%;
+        max-width: 280px;
+        margin: 0;
+    }
+    .top {
+        right: 12px;
+        bottom: 12px;
+    }
 }
