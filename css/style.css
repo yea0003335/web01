@@ -1,0 +1,490 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+
+/*視窗背景色設定*/
+body {
+    background: #332113 url(../images/bg.png) repeat-x;
+    color: #ecbd9d;
+    font-family: "Noto Serif TC", serif;
+    box-sizing: border-box;
+    /* background-color: #fbf9cc;
+    background-image: url(../images/bg.png);
+    background-repeat: repeat-x; */
+    /* 背景中間偏移使用calc()函數，四值語法不允許center + 20px */
+    /* background-position: calc(50% + 10vw) top;
+    background-position: top 50px right 50px; */
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/*連結顏色設定*/
+a {
+    color: #b64012;
+    text-decoration: none;
+}
+a:visited {
+    color: #64371a;
+}
+a:hover {
+    color: #b61212;
+}
+/* a:link {
+    color: green;
+    text-decoration: none;
+}
+a:visited {
+    color: pink;
+}
+a:hover {
+    color: orange;
+}
+a:active {
+    color: brown;
+} */
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    transition: .2s ease-in-out;
+    transition-property: transform background-color;
+}
+/*頁首,導覽,頁尾的共通設定*/
+header,
+.menu,
+footer {
+    text-align: center;
+}
+footer {
+    color: #b16e41;
+}
+
+/*頁面標題設定*/
+h1 {
+    color: #ecbd9d;
+    /* background-color: #b16e41; */
+    background-image: linear-gradient(135deg, #b16e41, #64371a);
+    font-family: "Cinzel", serif;
+    font-weight: 500;
+    font-size: 300%;
+    line-height: 1em;
+    width: 300px;
+    padding: 30px;
+    margin: 40px auto;
+    border: 3px solid #884a21;
+    border-radius: 50%;
+    box-sizing: border-box;
+    text-shadow: -2px -2px 2px rgba(236, 189, 157, .4);
+    box-shadow: 3px 3px 6px #64371a, 2px 2px 6px #b16e41 inset;
+}
+
+/*導覽樣式設定*/
+nav {
+    position: relative;
+}
+/* nav {
+    position: sticky;
+    top: 0px;
+    background-color: #332113;
+    width: 100%;
+} */
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+.nav-button {
+    display: none;
+    font-weight: bold;
+    color: #332113;
+    background-color: #b16e41;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 14px;
+    cursor: pointer;
+    margin: 0 auto 0.75rem;
+}
+.nav-button:hover {
+    background-color: #d48957;
+}
+.menu {
+    width: auto;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+.menu li {
+    flex: 1 1 160px;
+    max-width: 220px;
+    margin: 0;
+}
+.menu a {
+    color: #332113;
+    font-weight: bold;
+    background-color: #b16e41;
+    padding: 10px 8px;
+    border-radius: 5px;
+    display: block;
+    transform: translate(0px, 0px);
+}
+.menu a:hover {
+    color: #332113;
+    background-color: #d48957;
+    transform: translate(1px, 1px);
+}
+.menu a:visited {
+    color: #332113;
+}
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    /* background: #884a21;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; */
+}
+.top:link,
+.top:visited {
+    color: #d48957;
+}
+.top:hover {
+    color: #f7e2d4;
+}
+/*內容區塊邊框設定*/
+.content {
+    color: #332113;
+    background-color: #f7e2d4;
+    /*圓角內垂直*/
+    /* border: 2px solid #cc936d; */
+    /*圓角內圓弧*/
+    box-shadow: 0 0 0 2px #ecbd9d;
+    border-radius: 5px;
+    padding: 80px 6vw;
+    margin: 40px auto;
+    width: 85%;
+    max-width: 960px;
+    box-sizing: border-box;
+}
+
+/*次標題設定*/
+h2 {
+    color: #64371a;
+    border: 1px dotted #b16e41;
+    border-left: 10px solid #b16e41;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+/*小標題設定*/
+h3 {
+    color: #64371a;
+    background-color: #ecbd9d;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 2px #cc936d inset;
+}
+h4 {
+    font-size: 1.125em;
+}
+/*文繞圖設定*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+.imgL {
+    float: left;
+    margin-right: 20px;
+}
+.imgR {
+    float: right;
+    margin-left: 20px;
+}
+.clear {
+    clear: both;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*內頁設定*/
+.list {
+    margin-bottom: 30px;
+}
+.list li+li {
+    margin-top: 10px;
+}
+/*「更多介紹」連結設定*/
+.more,
+.back {
+    text-align: right;
+    padding-top: 20px;
+}
+.more a::after {
+    content: url(../images/ico_arrow.png);
+    margin-left: 3px;
+    vertical-align: middle;
+}
+.back a::before {
+    content: url(../images/ico_arrow2.png);
+    margin-right: 3px;
+    vertical-align: middle;
+}
+/*連結圖示設定*/
+a[href^="mailto:"]::after {
+    content: url(../images/ico_mail.png);
+    margin-left: 5px;
+    vertical-align: middle;
+}
+a[href*="example.com"]::after {
+    content: url(../images/ico_blank.png);
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/*圓形圖片設定*/
+.imgRad {
+    border-radius: 50%;
+    border: 3px solid #b16e41;
+}
+
+/*區塊間分隔*/
+/* section+section {
+    margin-top: 80px;
+}
+section section {
+    margin-top: 0;
+} */
+div.content>section~section {
+    margin-top: 80px;
+}
+
+/*表格設定*/
+table {
+    width: 100%;
+    border: 2px solid #b16e41;
+    margin-bottom: 30px;
+    /*合併邊框，共享重疊邊框*/
+    border-collapse: collapse;
+    /*合併邊框，邊框獨立*/
+    /* border-spacing: 0px; */
+}
+table th,
+table td {
+    border: 1px solid #b16e41;
+    padding: 10px 20px;
+}
+table th {
+    width: 20%;
+    min-width: 5em;
+    background-color: #ecbd9d;
+}
+table caption {
+    margin-bottom: 10px;
+}
+
+/*表單設定*/
+table input[type="text"],
+table input[type="email"],
+table textarea {
+    display: block;
+    border: 1px solid #ecbd9d;
+    background: #f7e2d4;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+table input[type="text"]:focus,
+table input[type="email"]:focus,
+table textarea:focus {
+    background: #fff;
+    border-radius: 5px;
+    /*移除預設輪廓*/
+    outline: none;
+}
+/*按鈕設定*/
+.btns {
+    text-align: center;
+}
+.btns input {
+    width: 200px;
+    color: #f7e2d4;
+    background-color: #b16e41;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.btns input:hover {
+    background-color: #d48957;
+}
+
+/* RWD 響應式調整 */
+@media (max-width: 900px) {
+    h1 {
+        width: auto;
+        max-width: 90%;
+        padding: 24px 18px;
+        font-size: 260%;
+    }
+    .content {
+        width: min(95%, 960px);
+        padding: 60px 5vw;
+    }
+    .menu li {
+        flex: 1 1 180px;
+        max-width: 240px;
+    }
+    .imgL,
+    .imgR {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+        width: 100%;
+        max-width: 560px;
+    }
+    .more,
+    .back {
+        text-align: center;
+    }
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+    }
+    dl dt,
+    dl dd {
+        width: auto;
+        margin: 0;
+    }
+    dl dt {
+        flex: 0 0 110px;
+    }
+    dl dd {
+        flex: 1 1 220px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 95%;
+    }
+    h1 {
+        font-size: 220%;
+        margin: 24px auto;
+        padding: 20px 16px;
+    }
+    .content {
+        width: min(98%, 960px);
+        padding: 40px 4vw;
+    }
+    .nav-button {
+        display: inline-flex;
+    }
+    .menu {
+        display: none;
+        width: 100%;
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+    .nav-toggle:checked+.nav-button+.menu {
+        display: flex;
+    }
+    .menu li {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+    .menu a {
+        padding: 12px 10px;
+    }
+    .imgL,
+    .imgR {
+        max-width: 100%;
+        margin: 0 auto 1rem;
+    }
+    section h3 {
+        font-size: 1.1rem;
+    }
+    .more,
+    .back {
+        text-align: left;
+        padding-top: 10px;
+    }
+    dl {
+        display: block;
+    }
+    dl dt,
+    dl dd {
+        width: 100%;
+    }
+    dl dt {
+        margin-top: 1rem;
+    }
+    table,
+    table th,
+    table td {
+        display: block;
+        width: 100%;
+    }
+    table {
+        border-collapse: separate;
+        border-spacing: 0 0.75rem;
+    }
+    table th {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #ecbd9d;
+        border: 1px solid #b16e41;
+        text-align: left;
+    }
+    table td {
+        display: block;
+        width: 100%;
+        border: 1px solid #b16e41;
+        border-top: none;
+        padding: 10px 0 1rem;
+        background-color: #fff;
+    }
+    table caption {
+        text-align: left;
+    }
+    table input[type="text"],
+    table input[type="email"],
+    table textarea,
+    table select {
+        width: 100%;
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+    .btns input {
+        width: 100%;
+        max-width: 280px;
+        margin: 0;
+    }
+    .top {
+        right: 12px;
+        bottom: 12px;
+    }
+}

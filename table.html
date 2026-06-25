@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yaci's Web｜讀者留言</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Yaci's Web</h1>
+      <p>介紹一下奇美博物館《埃及之王：法老》特展！</p>
+    </header>
+    <nav>
+      <a href="#" class="top">↑<br>TOP</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-button" aria-label="顯示選單">MENU</label>
+      <ul class="menu">
+        <li><a href="index.html#intro">關於本站</a></li>
+        <li><a href="index.html#exhibits">展品亮點</a></li>
+        <li><a href="index.html#about">作者介紹</a></li>
+        <li><a href="table.html">讀者留言</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <form action="" method="post">
+        <p><strong>※為必填項目</strong></p>
+        <table>
+          <caption>展品資料</caption>
+          <tr>
+            <th>展品名稱※</th>
+            <td><input type="text" name="exhibits" required></td>
+          </tr>
+          <tr>
+            <th>展覽單位※</th>
+            <td><input type="radio" name="museum" value="奇美博物館" checked>奇美博物館<input type="radio" name="museum"
+                value="大英博物館">大英博物館</td>
+          </tr>
+          <tr>
+            <th>年代</th>
+            <td>
+              <select name="year" id="year">
+                <option value="前王朝時期">前王朝時期</option>
+                <option value="早王朝時期">早王朝時期</option>
+                <option value="古王國時期">古王國時期</option>
+                <option value="中王國時期">中王國時期</option>
+                <option value="新王國時期">新王國時期</option>
+                <option value="後期王朝時期">後期王朝時期</option>
+                <option value="托勒密時期">托勒密時期</option>
+                <option value="羅馬時期">羅馬時期</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>材質</th>
+            <td><input type="checkbox" name="material" value="石灰岩、砂岩、花崗岩">石灰岩、砂岩、花崗岩<input type="checkbox"
+                name="material" value="彩繪、鑲嵌">彩繪、鑲嵌<input type="checkbox" name="material" value="黃金">黃金<input
+                type="checkbox" name="material" value="銅">銅<input type="checkbox" name="material" value="釉陶">釉陶<input
+                type="checkbox" name="material" value="埃及藍">埃及藍<input type="checkbox" name="material"
+                value="紙莎草">紙莎草<input type="checkbox" name="material" value="木質">木質<input type="checkbox"
+                name="material" value="泥磚">泥磚<input type="checkbox" name="material" value="麻布">麻布<input type="checkbox"
+                name="material" value="漆">漆</td>
+          </tr>
+          <tr>
+            <th>照片※</th>
+            <td><input type="file" required>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>個人資料</caption>
+          <tr>
+            <th>暱稱※</th>
+            <td><input type="text" name="name" placeholder="咖啡" required>※可使用暱稱</td>
+          </tr>
+          <tr>
+            <th>E-mail※</th>
+            <td><input type="email" name="email" id="" placeholder="ex@gmail.com" required>※請輸入半形文字</td>
+          </tr>
+          <tr>
+            <th>留言</th>
+            <td><textarea name="msg" id="msg" rows="5" cols="30"></textarea></td>
+          </tr>
+        </table>
+        <div class="btns"><input type="reset" value="清除重填"><input type="submit" value="送出"></div>
+      </form>
+    </div>
+    <footer>
+      <p><small>Copyright © Yaci Web All Rights Reserved.</small></p>
+    </footer>
+  </main>
+</body>
+
+</html>
